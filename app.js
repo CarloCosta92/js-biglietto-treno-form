@@ -22,6 +22,11 @@ function calcoloBiglietto (){
 let km = document.getElementById('userDistance').value;
 let age = document.getElementById('userAge').value;
 
+// salvo il nome del passeggero
+let passeggero = document.getElementById('user').value;
+
+console.log(passeggero);
+
 // convertire input in numero
 
 km = parseFloat(km);
@@ -54,13 +59,16 @@ if (age < 18) {
 priceTicket = priceTicket.toFixed(2);
 
 console.log("Il prezzo del biglietto ferroviario ammonta a " + priceTicket +" €");
+
+document.getElementById('nomePasseggero').innerHTML = `<h4>Nome passeggero: ${passeggero}</h4>`;
+document.getElementById('prezzoBiglietto').innerHTML = `<h4>Prezzo del biglietto: € ${priceTicket}</h4>`;
 }
 
 
 // BOTTONE ANNULLA
 
 document.getElementById('annulla').addEventListener('click', function() {
-    window.location.reload(); 
+document.getElementById('ticketForm').reset();
 });
 
 
