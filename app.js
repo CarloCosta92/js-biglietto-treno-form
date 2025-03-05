@@ -65,12 +65,39 @@ console.log("Il prezzo del biglietto ferroviario ammonta a " + priceTicket +" â‚
 document.getElementById('nomePasseggero').innerHTML = `<h4>Nome passeggero: ${passeggero}</h4>`;
 document.getElementById('prezzoBiglietto').innerHTML = `<h4>Prezzo del biglietto: â‚¬ ${priceTicket}</h4>`;
 
+// stampa i randomici per ticket e carrozza
+document.getElementById('carrozza').innerHTML = `<h4>Numero carrozza: ${numeroCarrozza}</h4>`;
+document.getElementById('nTicket').innerHTML = `<h4>Seriale Ticket: ${numeroTicket}</h4>`;
+
+
 // rendere visibile il container coi risultati
 
 const containerTicket = document.getElementById('containerTicket');
 containerTicket.classList.remove('d-none'); // Rimuove la classe d-none
 containerTicket.classList.add('d-block');   // Aggiunge la classe d-block
 }
+
+
+// funzione per generare numero random carrozza
+
+function randomCarrozza() {
+    return Math.floor(Math.random() * 12) + 1;
+  }
+  
+  let numeroCarrozza = randomCarrozza();
+  
+
+
+// funzione per generare numero seriale ticket
+function randomTicket() {
+    return Math.floor(Math.random() * 1000) + 1;
+  }
+  
+  let numeroTicket = randomTicket();
+ 
+
+
+
 
 
 // BOTTONE ANNULLA
