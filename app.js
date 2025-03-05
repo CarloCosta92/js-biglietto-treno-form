@@ -60,8 +60,16 @@ priceTicket = priceTicket.toFixed(2);
 
 console.log("Il prezzo del biglietto ferroviario ammonta a " + priceTicket +" €");
 
+// stampa dei risultati
+
 document.getElementById('nomePasseggero').innerHTML = `<h4>Nome passeggero: ${passeggero}</h4>`;
 document.getElementById('prezzoBiglietto').innerHTML = `<h4>Prezzo del biglietto: € ${priceTicket}</h4>`;
+
+// rendere visibile il container coi risultati
+
+const containerTicket = document.getElementById('containerTicket');
+containerTicket.classList.remove('d-none'); // Rimuove la classe d-none
+containerTicket.classList.add('d-block');   // Aggiunge la classe d-block
 }
 
 
@@ -69,6 +77,12 @@ document.getElementById('prezzoBiglietto').innerHTML = `<h4>Prezzo del biglietto
 
 document.getElementById('annulla').addEventListener('click', function() {
 document.getElementById('ticketForm').reset();
+
+// ri nasconde il container
+ const containerTicket= document.getElementById('containerTicket');
+ containerTicket.classList.remove('d-block'); 
+ containerTicket.classList.add('d-none'); 
+
 });
 
 
