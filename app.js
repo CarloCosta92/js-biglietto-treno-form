@@ -6,6 +6,9 @@
 // - va applicato uno sconto del 20% per i minorenni
 // - va applicato uno sconto del 40% per gli over 65.
 
+
+// BOTTONE CALCOLA
+
 // id bottone e funzione al click per attivare la funzione del cacolo biglietto
 const button = document.getElementById('buttonCalc');
 button.addEventListener('click', calcoloBiglietto);
@@ -53,5 +56,11 @@ priceTicket = priceTicket.toFixed(2);
 console.log("Il prezzo del biglietto ferroviario ammonta a " + priceTicket +" €");
 }
 
+
+// BOTTONE ANNULLA
+
+document.getElementById('annulla').addEventListener('click', function() {
+    window.location.reload(); 
+});
 
 
