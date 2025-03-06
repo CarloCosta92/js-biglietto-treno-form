@@ -11,12 +11,15 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
-<body class="bg-danger">
-
+<body class="bg-danger text-white">
+    <div class="container-fluid" style="background-image: url(./img/treno\ bimodale\ bis.jpg); background-size: cover; background-position: center; height: 100vh;">
     <div class="container p-5 mb-5 ">
-        <h2 class="text-center mb-5 text-light">BENVENUTO ALLA BOOLEAN TRASPORTI!</h2>
+        <h2 class="text-center mb-5 text-light bg-dark bg-opacity-50">BENVENUTO ALLA BOOLEAN TRASPORTI!</h2>
+        
 
-        <div class="container p-5 bg-light">
+        <div class="container p-5 bg-light bg-transparent">
+            <h3 class="text-center mb-5 text-light bg-dark bg-opacity-25">Inserisci i tuoi dati per calcolare il costo del biglietto</h3>
+
             <form action="index.html" id="ticketForm">
                 <div class="row g-3 text-center">
                     <!-- Nome -->
@@ -48,18 +51,27 @@
                 </div>
             </form>
         </div>
-        <div class="container p-5 mb-5 d-none " id="containerTicket">
-            <h2 class="text-center mt-5 mb-5 text-light">IL TUO BIGLIETTO!</h2>
+        <div class="container p-5 mb-5 d-none  " id="containerTicket">
+            <h2 class="text-center mt-5 mb-5 text-light bg-dark bg-opacity-25">IL TUO BIGLIETTO!</h2>
             <div class="container p-5  ">
-                <div class="row p-5 bg-light">
-                    <div class="col-6" id="nomePasseggero"></div>
-                    <div class="col-6" id="prezzoBiglietto"></div>
-                    <div class="col-6" id="carrozza"></div>
-                    <div class="col-6" id="nTicket"></div>
+                <div class="row p-5 bg-transparent">
+                    <div class="col-6 text-center " id="nomePasseggero"></div>
+                    <div class="col-6 text-center" id="prezzoBiglietto"></div>
+                    <div class="col-6 text-center" id="carrozza"></div>
+                    <div class="col-6 text-center" id="nTicket"></div>
+
+                    <div class="col-6 text-end">
+                        <input type="button" class="btn btn-primary mt-3" value="Acquista" id="buttonAcquista">
+                    </div>
+                    
+                    <div class="col-6 text-start">
+                        <input type="button" class="btn btn-primary mt-3" value="Annulla" id="annulla">
+                    </div>
                 </div>
             </div>
         </div>
 
+    </div>
     </div>
 
 
