@@ -7,24 +7,27 @@
 // - va applicato uno sconto del 40% per gli over 65.
 
 
+let km;
+let age;
+let passeggero;
+//definizione sconti
+const discountYoung = 0.80;
+const discountOld = 0.60;
+//calcolo prezzo base
 
-// BOTTONE CALCOLA
-
-// id bottone e funzione al click per attivare la funzione del cacolo biglietto
-const button = document.getElementById('buttonCalc');
-button.addEventListener('click', calcoloBiglietto);
+const price= parseFloat(0.21);  
 
 
-// creare una function
+// FUNZIONE PRINCIPALE
 
 function calcoloBiglietto (){
 // prendere i dati da input
 
-let km = document.getElementById('userDistance').value;
-let age = document.getElementById('userAge').value;
+km = document.getElementById('userDistance').value;
+age = document.getElementById('userAge').value;
 
 // salvo il nome del passeggero
-let passeggero = document.getElementById('user').value;
+passeggero = document.getElementById('user').value;
 
 console.log(passeggero);
 
@@ -37,14 +40,7 @@ console.log(km)
 
 //calcolo prezzo base
 
-const price= parseFloat(0.21);   
-
 let priceTicket = price * km;
-
-//definizione sconti
-
-const discountYoung = 0.80;
-const discountOld = 0.60;
 
 //condizione per calcolo
 
@@ -56,7 +52,6 @@ if (age < 18) {
 }
 
 // riduzione cifre del biglietto ad al massimo due decimali
-
 priceTicket = priceTicket.toFixed(2);
 
 console.log("Il prezzo del biglietto ferroviario ammonta a " + priceTicket +" €");
@@ -70,16 +65,18 @@ document.getElementById('prezzoBiglietto').innerHTML = `<h4>Prezzo del biglietto
 document.getElementById('carrozza').innerHTML = `<h4>Numero carrozza: ${numeroCarrozza}</h4>`;
 document.getElementById('nTicket').innerHTML = `<h4>Seriale Ticket: ${numeroTicket}</h4>`;
 
-
 // rendere visibile il container coi risultati
-
 const containerTicket = document.getElementById('containerTicket');
 containerTicket.classList.remove('d-none'); // Rimuove la classe d-none
 containerTicket.classList.add('d-block');   // Aggiunge la classe d-block
 }
 
 
-// funzione per generare numero random carrozza
+
+
+
+
+// FUNZIONE RANDOM CARROZZA
 
 function randomCarrozza() {
     return Math.floor(Math.random() * 12) + 1;
@@ -89,7 +86,7 @@ function randomCarrozza() {
   
 
 
-// funzione per generare numero seriale ticket
+// FUNZIONE RADOM NUMERO TICKET
 function randomTicket() {
     return Math.floor(Math.random() * 1000) + 1;
   }
@@ -98,7 +95,11 @@ function randomTicket() {
  
 
 
+// BOTTONE CALCOLA
 
+// id bottone e funzione al click per attivare la funzione del cacolo biglietto
+const button = document.getElementById('buttonCalc');
+button.addEventListener('click', calcoloBiglietto);
 
 
 // BOTTONE ANNULLA
